@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 
 			//insert data
-			$sql    = "INSERT INTO USERS (FB_USERS_ID) VALUES ('$fbid');";
+			$sql    = "INSERT INTO USERS (FB_USERS_ID) VALUES ($fbid);";
 			$result = pg_query($dbconn, $sql);
 
 			if ($result) {

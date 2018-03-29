@@ -28,13 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			}
 
 			//insert data
-			$sql    = "INSERT INTO USERS (FB_USERS_ID) VALUES ($fbid);";
+			$sql    = "INSERT INTO USERS (FB_USERS_ID) VALUES ('$fbid');";
 			$result = pg_query($dbconn, $sql);
 
 			if ($result) {
 				echo json_encode(['status' => 'ok','message' => "บันทึกข้อมูลเรียบร้อย"], JSON_FORCE_OBJECT);
 			} else {
-				echo json_encode(['status' => 'error','message' => "เกิดข้อผิดพลาดในการบันทึกข้อมูล"], JSON_FORCE_OBJECT);
+				echo json_encode(['status' => 'error', $fbid => "เกิดข้อผิดพลาดในการบันทึกข้อมูล"], JSON_FORCE_OBJECT);
 			}
 		}
 }

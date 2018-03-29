@@ -9,11 +9,8 @@ $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 $data = array();
 while ($row = pg_fetch_assoc($result)) {
     array_push($data, array(
-        'id' => $row['id'],
-        'username' => $row['username'],
-        'name' => $row['name'],
-        'password' => $row['password'],
-        'email' => $row['email']
+        'users_id' => $row['users_id'],
+        'fb_users_id' => $row['fb_users_id']
     ));
 }
 $json = json_encode($data);

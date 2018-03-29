@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$users = json_decode($content, true);
 	
 		$action = $users['action'];
-		$fbid = $users['$fbid'];
+		$fbid = $users['fbid'];
 		
 		// check action
 		if(strcmp($action, 'register') == 0){

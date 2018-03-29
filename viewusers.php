@@ -1,6 +1,6 @@
 <?php
 // Connecting, selecting database
-require("/config/connectionDB.php");
+require("config/connectionDB.php");
 
 // Performing SQL query
 $query = 'SELECT * FROM users';
